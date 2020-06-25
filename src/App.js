@@ -1,8 +1,11 @@
-import React from 'react';
+import React from "react";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <h1>BUDGET CALCULATOR</h1>
+    <div>
+      <Header title="Budget Calculator" />
+    </div>
   );
 }
 
