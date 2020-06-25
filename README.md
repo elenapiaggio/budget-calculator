@@ -1,4 +1,4 @@
-# COTIZACIÓN
+# Budget calculator
 
 ## Description
 Project with React.js using hooks and style components
@@ -23,7 +23,7 @@ In the project directory, you can run:
 ## Git repo
 The url to repository and deployed project:
 
-- [Repository Frontend Link](https://github.com/elenapiaggio/my-budget-app)
-- [Deploy Link](https://my-presupost-app.netlify.app/)
+- [Repository Frontend Link](https://github.com/elenapiaggio/budget-calculator)
+- [Deploy Link](https://thebudgetcalculator.netlify.app/)
 
 Made with :heart: by Elena
