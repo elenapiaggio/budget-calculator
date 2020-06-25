@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from '@emotion/styled';
 
 const Field = styled.div`
@@ -42,11 +42,34 @@ const Button = styled.button`
 `;
 
 const Form = () => {
+
+  const [ data, saveData ] = useState({
+    bootcamp: '',
+    type: '',
+    plan: '',
+  });
+
+  // extraer los valores
+  const { bootcamp, type, plan } = data;
+
+  // Read data of form and add to the state
+  const getInformationForm = (e) => {
+    saveData({
+      ...data,
+      [e.target.name]: e.target.value
+    })
+  };
+
+
   return (
     <form>
       <Field>
         <Label>Bootcamp</Label>
-        <Select>
+        <Select
+          name='bootcamp'
+          value={bootcamp}
+          onChange={getInformationForm}
+        >
           <option value="web">Web developoment</option>
           <option value="ux">UX-UI</option>
           <option value="big">Big Data</option>
@@ -54,7 +77,11 @@ const Form = () => {
       </Field>
       <Field>
         <Label>Type</Label>
-        <Select>
+        <Select
+          name='type'
+          value={type}
+          onChange={getInformationForm}
+        >
           <option value="ft">Full time</option>
           <option value="pt">Part time</option>
           <option value="fton">Full time online</option>
@@ -65,13 +92,17 @@ const Form = () => {
         <Label>Plan</Label>
         <InputRadio
           type='radio'
-          name='discount'
-          value='normal'
+          name='plan'
+          value='basic'
+          checked={plan === 'basic'}
+          onChange={getInformationForm}
         /> Basic
         <InputRadio
           type='radio'
-          name='discount'
-          value='normal'
+          name='plan'
+          value='full'
+          checked={plan === 'full'}
+          onChange={getInformationForm}
         /> Full
       </Field>
       <Button type='button'>Calculator</Button>
