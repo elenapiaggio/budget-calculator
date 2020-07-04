@@ -51,7 +51,7 @@ const Error = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Form = ({ setResume }) => {
+const Form = ({ setResume, setLoading }) => {
   const [ data, saveData ] = useState({
     bootcamp: "",
     type: "",
@@ -91,12 +91,20 @@ const Form = ({ setResume }) => {
     resultCostBootcamp = basicCostBootcamp + (basicCostBootcamp * difference) / 100;
     resultCostBootcamp = calculateBootcamp(bootcamp) * resultCostBootcamp;
     resultCostBootcamp = parseFloat(incrementPlan * resultCostBootcamp).toFixed(2);
-    console.log(resultCostBootcamp);
 
-    setResume({
-      cost: resultCostBootcamp,
-      data: data,
-    })
+    setLoading(true);
+    setTimeout(() => {
+      // Delete Spinner
+      setLoading(false);
+
+      // Send the information to the main component
+      setResume({
+        cost: resultCostBootcamp,
+        data: data,
+      })
+
+    }, 2000);
+    
   };
 
   return (

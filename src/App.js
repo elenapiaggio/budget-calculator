@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Resume from "./components/Resume";
 import Result from './components/Result';
+import Spinner from './components/Spinner';
 import styled from "@emotion/styled";
 
 const Container = styled.div`
@@ -20,14 +21,21 @@ function App() {
     price: 0
   });
 
+  const [ loading, setLoading ] = useState(false);
+
   const { data, cost } = resume;
 
   return (
     <Container>
       <Header title="Budget Calculator" />
       <ContainerForm>
-        <Form setResume={setResume} />
+        <Form 
+          setResume = {setResume} 
+          setLoading = {setLoading}
+        />
 
+        { loading ? <Spinner/> : null}
+        
         { 
           data ? 
           <Resume 
@@ -36,9 +44,15 @@ function App() {
           null
         }
 
-        <Result
-          cost = {cost}
-        />
+        {
+          !loading
+          ? <Result
+              cost = {cost}
+            /> 
+          : null 
+        }
+
+        
 
       </ContainerForm>
     </Container>
