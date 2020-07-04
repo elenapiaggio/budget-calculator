@@ -27,7 +27,7 @@ function App() {
 
   return (
     <Container>
-      <Header title="Budget Calculator" />
+      <Header title="Bootcamp cost calculator" />
       <ContainerForm>
         <Form 
           setResume = {setResume} 
@@ -51,8 +51,6 @@ function App() {
             /> 
           : null 
         }
-
-        
 
       </ContainerForm>
     </Container>

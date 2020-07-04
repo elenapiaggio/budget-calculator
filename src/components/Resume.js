@@ -12,8 +12,6 @@ const ContentResume = styled.div`
 
 const Resume = ({ data }) => {
   const { bootcamp, type, plan } = data;
-  console.log("data", {data})
-
   return (
     <ContentResume>
       <h2>Resume</h2>

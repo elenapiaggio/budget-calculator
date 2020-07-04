@@ -40,13 +40,12 @@ const Result = ({ cost }) => {
               <CSSTransition
                 classNames = 'result'
                 key = {cost}
-                timeout = {{enter: 500, exti: 500}}
+                timeout = {{enter: 500, exit: 500}}
               >
-                <TextCost>Total is: {cost}€</TextCost>
+                <TextCost>Total: {cost}€</TextCost>
               </CSSTransition>
             </TransitionGroup>
           </ResultCost>
-          
         )
       }
     </div>

@@ -93,6 +93,7 @@ const Form = ({ setResume, setLoading }) => {
     resultCostBootcamp = parseFloat(incrementPlan * resultCostBootcamp).toFixed(2);
 
     setLoading(true);
+    
     setTimeout(() => {
       // Delete Spinner
       setLoading(false);
