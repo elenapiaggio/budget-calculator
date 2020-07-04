@@ -1,7 +1,8 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
-import styled from '@emotion/styled';
+import Resume from "./components/Resume";
+import styled from "@emotion/styled";
 
 const Container = styled.div`
   max-width: 600px;
@@ -9,24 +10,29 @@ const Container = styled.div`
 `;
 
 const ContainerForm = styled.div`
-  background-color: #FFF;
+  background-color: #fff;
   padding: 3rem;
 `;
 
 function App() {
-  
-  const [ resume, setResume ] = useState({});
+  const [resume, setResume] = useState({});
+  const { data } = resume;
 
   return (
     <Container>
       <Header title="Budget Calculator" />
       <ContainerForm>
-        <Form
-          setResume = {setResume}
-        />
+        <Form setResume={setResume} />
+
+        { 
+          data ? 
+          <Resume 
+            data = { data }
+          /> : 
+          null
+        }
+
       </ContainerForm>
-      
-      
     </Container>
   );
 }
