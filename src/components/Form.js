@@ -51,8 +51,8 @@ const Error = styled.div`
   margin-bottom: 2rem;
 `;
 
-const Form = () => {
-  const [data, saveData] = useState({
+const Form = ({ setResume }) => {
+  const [ data, saveData ] = useState({
     bootcamp: "",
     type: "",
     plan: "",
@@ -92,6 +92,11 @@ const Form = () => {
     resultCostBootcamp = calculateBootcamp(bootcamp) * resultCostBootcamp;
     resultCostBootcamp = parseFloat(incrementPlan * resultCostBootcamp).toFixed(2);
     console.log(resultCostBootcamp);
+
+    setResume({
+      cost: resultCostBootcamp,
+      data: data,
+    })
   };
 
   return (
