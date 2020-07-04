@@ -42,3 +42,8 @@ export function getTypeDifference(type) {
 export function getPlan(plan){
   return (plan === 'basic') ? 1.20 : 1.50;
 }
+
+// show the first letter on UpperCase
+export function changeToUpperCase(text){
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
