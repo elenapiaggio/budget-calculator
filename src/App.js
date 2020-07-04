@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Resume from "./components/Resume";
+import Result from './components/Result';
 import styled from "@emotion/styled";
 
 const Container = styled.div`
@@ -15,8 +16,11 @@ const ContainerForm = styled.div`
 `;
 
 function App() {
-  const [resume, setResume] = useState({});
-  const { data } = resume;
+  const [resume, setResume] = useState({
+    price: 0
+  });
+
+  const { data, cost } = resume;
 
   return (
     <Container>
@@ -31,6 +35,10 @@ function App() {
           /> : 
           null
         }
+
+        <Result
+          cost = {cost}
+        />
 
       </ContainerForm>
     </Container>
