@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState} from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import styled from '@emotion/styled';
@@ -14,11 +14,14 @@ const ContainerForm = styled.div`
 `;
 
 function App() {
+  const [ resume, setResume ] = useState({});
   return (
     <Container>
       <Header title="Budget Calculator" />
       <ContainerForm>
-        <Form/>
+        <Form
+          setResume = {setResume}
+        />
       </ContainerForm>
       
       
