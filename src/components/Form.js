@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import PropTypes from 'prop-types';
 import { getTypeDifference, calculateBootcamp, getPlan } from "./Helper";
 
 const Field = styled.div`
@@ -93,7 +94,7 @@ const Form = ({ setResume, setLoading }) => {
     resultCostBootcamp = parseFloat(incrementPlan * resultCostBootcamp).toFixed(2);
 
     setLoading(true);
-    
+
     setTimeout(() => {
       // Delete Spinner
       setLoading(false);
@@ -153,5 +154,10 @@ const Form = ({ setResume, setLoading }) => {
     </form>
   );
 };
+
+Form.propTypes = {
+  setResume: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
+}
 
 export default Form;
