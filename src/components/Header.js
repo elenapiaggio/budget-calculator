@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from 'prop-types';
 
 const ContainerHeader = styled.header`
-  background-color: #26c6da;
+  background-color: #00b2bd;
   padding: 10px;
   font-weight: bold;
   color: #ffffff;

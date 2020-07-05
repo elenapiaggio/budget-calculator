@@ -4,7 +4,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 const Message = styled.p`
-  background-color: rgb(127, 224, 237);
   margin-top: 2rem;
   padding: 1rem;
   text-align: center;
@@ -13,14 +12,13 @@ const Message = styled.p`
 const ResultCost = styled.div`
   text-align: center;
   padding: .5rem;
-  border: 1px solid #26C6DA;
-  background-color: rgb(127, 224, 237);
+  border: 1px solid #048E97;
   margin-top: 1rem;
   position: relative;
 `;
 
 const TextCost = styled.p`
-  color: #00838F;
+  color: #FF6363;
   padding: 1rem;
   text-transform: uppercase;
   margin:0;
@@ -35,7 +33,7 @@ const Result = ({ cost }) => {
         : (
           <ResultCost>
             <TransitionGroup
-              component = 'p'
+              component = 'span'
               className = 'result'
             >
               <CSSTransition
@@ -43,7 +41,7 @@ const Result = ({ cost }) => {
                 key = {cost}
                 timeout = {{enter: 500, exit: 500}}
               >
-                <TextCost>Total: {cost}€</TextCost>
+                <TextCost>Total: <span>{cost}€</span></TextCost>
               </CSSTransition>
             </TransitionGroup>
           </ResultCost>
@@ -54,7 +52,7 @@ const Result = ({ cost }) => {
 }
  
 Result.propTypes = {
-  cost: PropTypes.number.isRequired,
+  cost: PropTypes.number,
 }
 
 export default Result;

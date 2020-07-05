@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 const ContentResume = styled.div`
   padding: 1rem;
   text-align: center;
-  background-color: #00838F;
-  color: #FFF;
+  color: #000;
   margin-top: 1rem;
+  border: 1px solid #048E97;
 `;
 
 const Resume = ({ data }) => {
@@ -16,11 +16,11 @@ const Resume = ({ data }) => {
   return (
     <ContentResume>
       <h2>Resume</h2>
-      <ul>
-        <li>Bootcamp: {changeToUpperCase(bootcamp)}</li>
-        <li>Type: {changeToUpperCase(type)}</li>
-        <li>Plan: {changeToUpperCase(plan)}</li>
-      </ul>
+      <p>
+      Bootcamp: {changeToUpperCase(bootcamp)} <br/>
+      Type: {changeToUpperCase(type)} <br/>
+      Plan: {changeToUpperCase(plan)} <br/>
+      </p>
     </ContentResume>
   );
 };

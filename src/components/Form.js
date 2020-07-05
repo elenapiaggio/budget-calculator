@@ -26,7 +26,7 @@ const InputRadio = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #00838f;
+  background-color: #FF6363;
   font-size: 16px;
   width: 100%;
   padding: 1rem;
@@ -44,7 +44,7 @@ const Button = styled.button`
 `;
 
 const Error = styled.div`
-  background-color: red;
+  background-color: #FF6363;
   color: white;
   padding: 1rem;
   width: 100%;
@@ -101,7 +101,7 @@ const Form = ({ setResume, setLoading }) => {
 
       // Send the information to the main component
       setResume({
-        cost: resultCostBootcamp,
+        cost: Number(resultCostBootcamp),
         data: data,
       })
 
@@ -150,7 +150,7 @@ const Form = ({ setResume, setLoading }) => {
         />{" "}
         Full
       </Field>
-      <Button type="submit">Calculator</Button>
+      <Button type="submit">Calculate</Button>
     </form>
   );
 };
