@@ -56,4 +56,5 @@ const Result = ({ cost }) => {
 Result.propTypes = {
   cost: PropTypes.number.isRequired,
 }
+
 export default Result;

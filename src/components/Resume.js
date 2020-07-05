@@ -1,6 +1,7 @@
 import React from "react";
 import styled from '@emotion/styled';
 import { changeToUpperCase } from './Helper';
+import PropTypes from 'prop-types';
 
 const ContentResume = styled.div`
   padding: 1rem;
@@ -23,5 +24,9 @@ const Resume = ({ data }) => {
     </ContentResume>
   );
 };
+
+Resume.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
 export default Resume;
